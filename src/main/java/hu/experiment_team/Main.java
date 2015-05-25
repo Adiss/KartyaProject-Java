@@ -147,14 +147,17 @@ public class Main extends Application {
                 card.getImage().setTranslateX(27);
                 deckTable.getChildren().add(card.getImage());
                 Dealer.INSTANCE.giveBeer(players);
-                if(card.getRank() == 12) Dealer.INSTANCE.giveQueen(players, card);
-                if(card.getRank() == 1) Dealer.INSTANCE.giveAce(players, card);
-                if(card.getRank() == 13){
+                if (card.getRank() == 12) Dealer.INSTANCE.giveQueen(players, card);
+                if (card.getRank() == 1) Dealer.INSTANCE.giveAce(players, card);
+                if (card.getRank() == 13) {
                     root.getChildren().addAll(addRuleLabel, addRuleTextField, addRuleButton);
                     drawCard.setDisable(true);
                 }
-                table.getColumns().stream().forEach(s -> {s.setVisible(false); s.setVisible(true); });
-            } else{
+                table.getColumns().stream().forEach(s -> {
+                    s.setVisible(false);
+                    s.setVisible(true);
+                });
+            } else {
                 drawCard.setDisable(true);
                 deckTable.getChildren().addAll(resetDeck, resetTable);
             }
@@ -186,6 +189,7 @@ public class Main extends Application {
 
         stage.setResizable(false);
         stage.show();
+
     }
 
 }
